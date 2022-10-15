@@ -106,18 +106,29 @@ animation-name: logo_animation;
 animation-duration: 5s;
 }
 
-/* #11 */
 @media screen and (min-width: 900px) {
+    /* #11 header & nav links logo to the left*/
     header,.nav_links {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+
+    /* #12 card class flex basis, pricing flex*/
     .card {
         flex-basis: 275px;
     }
 
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* #13 fixed header + content padding  */
     .skip + header {
         display: flex;
         flex-direction: row;
@@ -132,14 +143,6 @@ animation-duration: 5s;
     main {
         padding: 101px;
     }
-
-    .pricing {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-    }
 }
 
 /* #14 reduced motion  */
@@ -151,11 +154,13 @@ animation-duration: 5s;
 }
 
 @media print {
+    /* #15 & 16 change the font & image */
     body {
         font-family: Arial, Helvetica;
         background-image: none;
     }
 
+    /* #17 spread out nav links with flex */
     nav {
         width: 100%;
     }
@@ -167,6 +172,7 @@ animation-duration: 5s;
         justify-content: space-evenly;
     }
 
+    /* #18 flex bottom align */
     .pricing {
         display: flex;
         flex-direction: row;
@@ -174,15 +180,13 @@ animation-duration: 5s;
         align-items: flex-end;
     }
 
+    /* #19 card class basis & border */
     .card {
         flex-basis: 325px;
         border: 2px solid #45ADDD;
     }
 
-    main li:nth-child(2)::after {
-        content: '👍🏻';
-    }
-
+    /* #20 gallery invisible */
     #gallery {
         display: none;
         visibility: hidden;
@@ -191,5 +195,10 @@ animation-duration: 5s;
     .gallery {
         display: none;
         visibility: hidden;
+    }
+
+    /* #21 adding thumbs up with ::after */
+    main li:nth-child(2)::after {
+        content: '👍🏻';
     }
 }
