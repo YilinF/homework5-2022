@@ -1,0 +1,198 @@
+/* #2 font & background image */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+  font-family: 'Poppins', serif;
+  background-image: url('/images/concrete_seamless.png');
+  background-color: #f1f1f1;
+}
+
+/* #3 header to flex  */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #4 nav_links to flex */
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* #5 links stay blue after visited  */
+.nav_item a{
+    color: blue;
+}
+
+/* #6 header within card  */
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px;
+    border-radius: 0%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+/* #7&8 card class  */
+.card {
+    flex-basis: 450px;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    border-radius: 0%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #9 images in gallery */
+.gallery > img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* #10 gallery flex  */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+/* #1 Animation */
+@-webkit-keyframes logo_animation {
+    from {
+      width: 25px;
+      opacity: 0;
+    }
+    to {
+      width: 475px;
+      opacity: 1;
+    }
+}
+  
+@keyframes logo_animation {
+    from {
+      width: 25px;
+      opacity: 0;
+    }
+    to {
+      width: 475px;
+      opacity: 1;
+    }
+} 
+  
+#logo {
+-webkit-animation-name: logo_animation;
+-webkit-animation-duration: 5s;
+animation-name: logo_animation;
+animation-duration: 5s;
+}
+
+/* #11 */
+@media screen and (min-width: 900px) {
+    header,.nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card {
+        flex-basis: 275px;
+    }
+
+    .skip + header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+    }
+
+    main {
+        padding: 101px;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* #14 reduced motion  */
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        -webkit-animation: none;
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    .card {
+        flex-basis: 325px;
+        border: 2px solid #45ADDD;
+    }
+
+    main li:nth-child(2)::after {
+        content: '👍🏻';
+    }
+
+    #gallery {
+        display: none;
+        visibility: hidden;
+    }
+
+    .gallery {
+        display: none;
+        visibility: hidden;
+    }
+}
